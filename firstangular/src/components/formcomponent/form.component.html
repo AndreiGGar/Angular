@@ -1,0 +1,54 @@
+<div>
+  <h3>Form Angular</h3>
+  <h4>{{ message }}</h4>
+  <form #userForm="ngForm" (ngSubmit)="getData()">
+    <div>
+      <label for="name">Name: </label>
+      <input
+        type="text"
+        id="name"
+        name="nameBox"
+        #nameBox="ngModel"
+        [(ngModel)]="user.name"
+        required
+      />
+      <label *ngIf="!nameBox.valid && nameBox.touched" style="color: red"
+        >Name is required</label
+      >
+    </div>
+    <div>
+      <label for="surname">Surname: </label>
+      <input
+        type="text"
+        id="surname"
+        name="surnameBox"
+        #surnameBox="ngModel"
+        [(ngModel)]="user.surname"
+        pattern="^[A-Z]{1}[a-z]{2,}"
+      />
+      <label *ngIf="!surnameBox.valid && surnameBox.touched" style="color: red"
+        >Surname first in Mayus</label
+      >
+    </div>
+    <div>
+      <label for="age">Age: </label>
+      <input
+        type="number"
+        id="age"
+        name="ageBox"
+        #ageBox="ngModel"
+        [(ngModel)]="user.age"
+      />
+    </div>
+    <br />
+    <div>
+      <button [disabled]="!userForm.valid" type="submit">Submit</button>
+    </div>
+    <div>
+      <h4>Name: {{ user.name }}<br /></h4>
+      <h4>Surname: {{ user.surname }}<br /></h4>
+      <h4>Age: {{ user.age }}<br /></h4>
+    </div>
+  </form>
+</div>
+<br />

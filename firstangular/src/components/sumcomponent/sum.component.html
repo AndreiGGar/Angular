@@ -1,0 +1,16 @@
+<div>
+  <h3>Form Angular</h3>
+  <form #sumForm="ngForm">
+    <label>Number 1: </label>
+    <input type="number" name="boxNumber1" #boxNumber1 />
+    <br />
+    <label>Number 2: </label>
+    <input type="number" name="boxNumber2" #boxNumber2 />
+    <br /><br/>
+    <button (click)="sumNumbers()">Sumar números</button>
+  </form>
+  <div *ngIf="sum">
+    <h4 style="color: red">The sum is: {{ sum }}</h4>
+  </div>
+</div>
+<br />

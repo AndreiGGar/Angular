@@ -1,0 +1,32 @@
+<h3>Sports Angular</h3>
+<h4>Sports: {{ sports.length }}</h4>
+
+<div *ngIf="sports.length < 7; then conditionSportsTrue; else conditionSportsFalse;">
+</div>
+
+<ul>
+  <!-- <li *ngFor="let num of numbers" [style.color]="num % 2 ? 'lightblue' : 'brown'">
+    {{num}}
+  </li> -->
+  <!-- <li *ngFor="let num of numbers" [class.odd]="num % 2 == 0" [class.couple]="num % 2 == 1">
+    {{num}}
+  </li> -->
+  <li *ngFor="let num of numbers" [ngClass]="{odd: num % 2 == 0, couple: num % 2 == 1}">
+    {{num}}
+  </li>
+</ul>
+
+<ng-template #conditionSportsTrue>
+  <p style="color: lime">You got less than 7 sports</p>
+</ng-template>
+<ng-template #conditionSportsFalse>
+  <p style="color: crimson">You got more than 7 sports</p>
+</ng-template>
+
+<div>
+  <ul>
+    <li *ngFor="let sport of sports; index as i" style="color: purple">
+      Sport {{ i + 1 }}: {{ sport }}
+    </li>
+  </ul>
+</div>
