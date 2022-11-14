@@ -1,0 +1,12 @@
+<div>
+  <h4>Double number</h4>
+  <div *ngIf="number">
+    <p>The double of {{ number }} is: {{double}}</p>
+  </div>
+  <div *ngIf="!number">
+    <p>Enter a number params</p>
+  <div>
+    <button (click)="goToHome()" style="margin-right: 10px">Home</button>
+    <button (click)="redirect(88)">To 88</button>
+  </div>
+</div>

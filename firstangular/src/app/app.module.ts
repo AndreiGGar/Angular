@@ -8,6 +8,7 @@ import { HooksComponent } from '../components/hooksangular/hooks.component';
 import { SportsComponent } from '../components/sportscomponent/sports.component';
 import { FormComponent } from '../components/formcomponent/form.component';
 import { SumComponent } from '../components/sumcomponent/sum.component';
+import { MultiplicationComponent } from '../components/multiplicationcomponent/multiplication.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { SumComponent } from '../components/sumcomponent/sum.component';
     HooksComponent,
     SportsComponent,
     FormComponent,
-    SumComponent
+    SumComponent,
+    MultiplicationComponent
   ],
   imports: [
     BrowserModule, FormsModule

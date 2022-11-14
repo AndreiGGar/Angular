@@ -1,0 +1,5 @@
+<nav style="display: flex; justify-content: space-evenly;">
+  <ul *ngFor="let number of numbers">
+    <li><a routerLink="/collatz/{{number}}">{{number}}</a></li>
+  </ul>
+</nav>

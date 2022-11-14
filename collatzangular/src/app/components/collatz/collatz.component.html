@@ -1,0 +1,17 @@
+<div>
+  <h4>Double number</h4>
+  <div *ngIf="number">
+    <ul>
+      <li *ngFor="let number of numbers">
+        {{ number }}
+      </li>
+    </ul>
+    <button class="btn btn-success" (click)="goToHome()">Home</button>
+  </div>
+  <div *ngIf="!number">
+    <p>Enter a number params</p>
+    <div>
+      <button class="btn btn-success" (click)="goToHome()">Home</button>
+    </div>
+  </div>
+</div>

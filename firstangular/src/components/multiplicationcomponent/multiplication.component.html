@@ -1,0 +1,16 @@
+<div>
+  <h3>Form Angular</h3>
+  <form #multiplicationForm="ngForm">
+    <label>Submit a number: </label>
+    <input type="number" name="boxNumber1" #boxNumber1 required/>
+    <br /><br />
+    <button [disabled]="!multiplicationForm.valid" (click)="multiplicationNumbers()">Get Result</button>
+  </form>
+  <div>
+    <h4>Result:</h4>
+    <ul *ngIf="multiplication">
+      <li *ngFor="let index of multiplication" style="color: crimson">{{ index }}</li>
+    </ul>
+  </div>
+</div>
+<br />
