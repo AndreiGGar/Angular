@@ -1,0 +1,29 @@
+<div>
+  <h3>Comics</h3>
+  <form #insertComicForm="ngForm" (ngSubmit)="insertComic()" class="form w-50 m-auto">
+    <label>Hero: </label>
+    <input class="form-control" type="text" name="boxHero" [placeholder]="heroBox" #boxHero required/>
+    <label>Image: </label>
+    <input class="form-control" type="text" name="boxImage" #boxImage required/>
+    <label>Name: </label>
+    <input class="form-control" type="text" name="boxName" #boxName required/>
+    <button class="btn btn-secondary mt-4">Edit Comic</button>
+    <button class="btn btn-success mt-4 mx-4">Insert New Comic</button>
+  </form>
+  <div class="row">
+    <div *ngIf="message" class="row d-flex text-center">
+      <p>---</p>
+      <h5>{{ message }}</h5>
+      <p>---</p>
+    </div>
+    <div *ngFor="let comic of comics; index as i">
+      <app-comic
+        [comic]="comic"
+        [index]="i"
+        (selectFavorite)="selectFavorite($event)"
+        (deleteComic)="deleteComic($event)"
+        (editComic)="editComic($event)"
+      ></app-comic>
+    </div>
+  </div>
+</div>

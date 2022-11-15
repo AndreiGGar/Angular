@@ -1,0 +1,11 @@
+<div>
+  <h3>Sports</h3>
+  <p>---</p>
+  <div *ngIf="message">
+    <h5>{{message}}</h5>
+  </div>
+  <p>---</p>
+  <div *ngFor="let sport of sports">
+    <app-sport [sport]="sport" (selectFavorite)="selectFavorite($event)"></app-sport>
+  </div>
+</div>
