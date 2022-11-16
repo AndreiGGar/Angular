@@ -17,6 +17,7 @@ export class ComicsComponent implements OnInit {
   public heroBox!: string;
   public imageBox!: string;
   public nameBox!: string;
+  public index!: number;
 
   constructor() {
     this.comics = [
@@ -57,12 +58,16 @@ export class ComicsComponent implements OnInit {
   }
 
   editComic(event: any): void {
-    this.comics[event].hero = this.heroBox;
-    this.comics[event].image = this.imageBox;
-    this.comics[event].name = this.nameBox;
-    // this.comics[event].hero = this.hero.nativeElement.value;
-    // this.comics[event].image = this.image.nativeElement.value;
-    // this.comics[event].name = this.name.nativeElement.value;
+    this.heroBox = this.comics[event].hero;
+    this.imageBox = this.comics[event].image;
+    this.nameBox = this.comics[event].name;
+    this.index = event;
+  }
+
+  editComicSubmit(): void {
+    this.comics[this.index].hero = this.hero.nativeElement.value;
+    this.comics[this.index].image = this.image.nativeElement.value;
+    this.comics[this.index].name = this.name.nativeElement.value;
   }
 
   insertComic(): void {

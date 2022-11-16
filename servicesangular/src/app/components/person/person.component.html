@@ -1,0 +1,19 @@
+<h3>Api People Angular</h3>
+<table class="table table-bordered table-hover table-dark">
+  <thead>
+    <tr>
+      <th>Id</th>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Age</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let person of people">
+      <td>{{ person.IdPersona }}</td>
+      <td>{{ person.Nombre }}</td>
+      <td>{{ person.Email }}</td>
+      <td>{{ person.Edad }}</td>
+    </tr>
+  </tbody>
+</table>

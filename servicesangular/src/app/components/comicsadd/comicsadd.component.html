@@ -1,0 +1,14 @@
+<div>
+  <div class="row d-fle justify-content-center">
+    <div
+      *ngFor="let comic of comics"
+      class="card float-left"
+      style="float: left; width: 30rem"
+    >
+      <img src="{{ comic.image }}" class="card-img-top w-100 h-100" />
+      <h5 class="card-title">{{ comic.hero }}</h5>
+      <p class="card-text">{{ comic.name }}</p>
+      <a routerLink="/comics" class="btn btn-secondary">Details</a>
+    </div>
+  </div>
+</div>

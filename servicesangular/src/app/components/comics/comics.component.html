@@ -1,6 +1,6 @@
 <div>
   <h3>Comics</h3>
-  <form #insertComicForm="ngForm" (ngSubmit)="insertComic()" class="form w-50 m-auto">
+  <form #insertComicForm="ngForm" class="form w-50 m-auto">
     <label>Hero: </label>
     <div *ngIf="heroBox">
       <input class="form-control" type="text" name="boxHero" [value]="heroBox" #boxHero required/>
@@ -40,5 +40,6 @@
         (editComic)="editComic($event)"
       ></app-comic>
     </div>
+    
   </div>
 </div>
