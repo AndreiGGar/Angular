@@ -1,0 +1,12 @@
+<div>
+  <h3>Details Employer Routing</h3>
+  <a class="btn btn-dark" [routerLink]="['/masteremployers']">Back</a>
+  <hr />
+  <div *ngIf="employer">
+    <!-- <p>Employer Id: {{ employer.idEmpleado }}</p> -->
+    <b>Surname: {{ employer.apellido }}</b>
+    <p>Job: {{ employer.oficio }}</p>
+    <p>Salary: {{ employer.salario }}</p>
+    <p>Department: {{ employer.departamento }}</p>
+  </div>
+</div>

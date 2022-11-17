@@ -1,0 +1,65 @@
+<div>
+  <h3>Employers Office Api</h3>
+  <!-- <form #employersForm="ngForm" (ngSubmit)="searchEmployersBox()">
+    <div class="w-25 d- m-auto">
+      <label>Select a office: </label>
+      <input type="text" class="form-control mb-2" name="officeBox" #officeBox>
+      <button type="submit" class="btn btn-primary mt-2 mb-4">Submit</button>
+    </div>
+  </form> -->
+  <form #employersForm="ngForm" (ngSubmit)="searchEmployersOffice()">
+    <div class="w-25 d- m-auto">
+      <label>Select a office: </label>
+      <select class="form-control mb-2" name="office" #office>
+        <option
+          *ngFor="let office of offices"
+          [value]="office"
+          class="form-select"
+        >
+          {{ office }}
+        </option>
+      </select>
+      <button type="submit" class="btn btn-primary mt-2 mb-4">Submit</button>
+    </div>
+  </form>
+  <table *ngIf="employers && office.value != ''" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Employer Id</th>
+        <th>Employer Surname</th>
+        <th>Employer Job</th>
+        <th>Employer Salary</th>
+        <th>Employer Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employer of employers">
+        <td>{{ employer.idEmpleado }}</td>
+        <td>{{ employer.apellido }}</td>
+        <td>{{ employer.oficio }}</td>
+        <td>{{ employer.salario }}</td>
+        <td>{{ employer.departamento }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <!-- <table *ngIf="employersFilter?.length && officeBox.value != ''" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Employer Id</th>
+        <th>Employer Surname</th>
+        <th>Employer Job</th>
+        <th>Employer Salary</th>
+        <th>Employer Department</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employer of employersFilter">
+        <td>{{ employer.idEmpleado }}</td>
+        <td>{{ employer.apellido }}</td>
+        <td>{{ employer.oficio }}</td>
+        <td>{{ employer.salario }}</td>
+        <td>{{ employer.departamento }}</td>
+      </tr>
+    </tbody>
+  </table> -->
+</div>

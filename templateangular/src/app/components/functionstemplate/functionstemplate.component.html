@@ -1,0 +1,42 @@
+<div>
+  <h3>Employers Salary Api</h3>
+  <form #employersForm="ngForm" (ngSubmit)="showFunctions()">
+    <div class="w-25 d- m-auto">
+      <div class="form-group">
+        <select class="form-select mb-2" name="functionsBox" #functionsBox multiple required>
+          <option
+            *ngFor="let template of templates"
+            [value]="template"
+          >
+            {{ template }}
+          </option>
+        </select>
+      </div>
+      <button type="submit" class="btn btn-primary mt-2 mb-4">Submit</button>
+    </div>
+  </form>
+  <table *ngIf="functionsArray && functionsBox.value != ''" class="table table-striped table-bordered">
+    <thead>
+      <tr>
+        <th>Employer Id</th>
+        <th>Employer Hospital</th>
+        <th>Employer Room</th>
+        <th>Employer Surname</th>
+        <th>Employer Function</th>
+        <th>Employer Turn</th>
+        <th>Employer Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let functionId of functionsArray">
+        <td>{{ functionId.idEmpleado }}</td>
+        <td>{{ functionId.idHospital }}</td>
+        <td>{{ functionId.idSala }}</td>
+        <td>{{ functionId.apellido }}</td>
+        <td>{{ functionId.funcion }}</td>
+        <td>{{ functionId.turno }}</td>
+        <td>{{ functionId.salario }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

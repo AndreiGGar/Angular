@@ -1,0 +1,14 @@
+<div>
+  <h3>Master Details Employers Routing</h3>
+  <div *ngFor="let employer of employers">
+    <p>
+      {{ employer.apellido }} |
+      <a
+        class="btn btn-success"
+        [routerLink]="['/masteremployers/details/', employer.idEmpleado]"
+      >
+        Details
+      </a>
+    </p>
+  </div>
+</div>
