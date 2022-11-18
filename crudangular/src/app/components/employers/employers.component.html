@@ -1,0 +1,47 @@
+<div>
+  <h3>Employers By Dept</h3>
+  <a class="btn btn-dark" [routerLink]="['/']">Home</a>
+  <hr />
+  <table
+    class="table table-bordered table-warning table-hover"
+    *ngIf="employers?.length; else tableEmpty"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Id Employer</th>
+        <th scope="col">Surname</th>
+        <th scope="col">Office</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Dept</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employer of employers">
+        <td>{{ employer.idEmpleado }}</td>
+        <td>{{ employer.apellido }}</td>
+        <td>{{ employer.oficio }}</td>
+        <td>{{ employer.salario }}</td>
+        <td>{{ employer.departamento }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #tableEmpty>
+    <table class="table table-bordered table-warning table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Id Employer</th>
+          <th scope="col">Surname</th>
+          <th scope="col">Office</th>
+          <th scope="col">Salary</th>
+          <th scope="col">Dept</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5" class="text-center">There are no employers.</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+</div>

@@ -1,0 +1,40 @@
+<div *ngIf="department">
+  <form #departmentNew="ngForm" class="form w-50 m-auto mt-4">
+    <label>Number: </label>
+    <div>
+      <input
+        class="form-control"
+        type="text"
+        name="deptNumber"
+        [value]="department.numero"
+        #deptNumber
+        readonly
+      />
+    </div>
+    <label>Name: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="deptName"
+      [value]="department.nombre"
+      #deptName
+      required
+    />
+    <label>Location: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="deptLocation"
+      [value]="department.localidad"
+      #deptLocation
+      required
+    />
+    <button
+      class="btn btn-primary mt-4"
+      type="submit"
+      (click)="updateDepartment()"
+    >
+      Update Dept
+    </button>
+  </form>
+</div>

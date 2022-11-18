@@ -1,0 +1,29 @@
+<div>
+  <table class="table table-bordered table-hover table-danger w-50 m-auto">
+    <thead>
+      <tr>
+        <th>Id</th>
+        <th>Nombre</th>
+        <th>Localidad</th>
+        <th>Employers</th>
+        <th>Edit</th>
+        <th>Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let department of departments">
+        <td>{{ department.numero }}</td>
+        <td>{{ department.nombre }}</td>
+        <td>{{ department.localidad }}</td>
+        <td>
+          <a class="btn btn-dark" [routerLink]="['/departments/employers/', department.numero]">Employers</a>
+        </td>
+        <td>
+          <a class="btn btn-warning" [routerLink]="['/departments/edit/', department.numero]">Edit</a>
+        </td>
+        <td>
+          <a class="btn btn-danger" (click)="deleteDepartment(department.numero)">Delete</a>
+        </td>
+      </tr>
+  </table>
+</div>

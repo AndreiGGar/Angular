@@ -1,0 +1,37 @@
+<div>
+  <form #departmentNew="ngForm" class="form w-50 m-auto mt-4">
+    <label>Number: </label>
+    <div>
+      <input
+        class="form-control"
+        type="text"
+        name="deptNumber"
+        #deptNumber
+        required
+      />
+    </div>
+    <label>Name: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="deptName"
+      #deptName
+      required
+    />
+    <label>Location: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="deptLocation"
+      #deptLocation
+      required
+    />
+    <button
+      class="btn btn-primary mt-4"
+      type="submit"
+      (click)="addDepartment()"
+    >
+      Add Dept
+    </button>
+  </form>
+</div>
