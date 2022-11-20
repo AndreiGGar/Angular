@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { DepartmentsService } from '../../services/departments.service';
-import { Department } from '../../models/department';
+import { SeriesService } from '../../services/series.service';
+import { Serie } from '../../models/serie';
 
 @Component({
   selector: 'app-menu',
@@ -8,18 +8,18 @@ import { Department } from '../../models/department';
   styleUrls: ['./menu.component.css'],
 })
 export class MenuComponent implements OnInit {
-  departments!: Department[];
+  series!: Serie[];
 
-  constructor(private _departmentsService: DepartmentsService) {
+  constructor(private SeriesService: SeriesService) {
   }
 
-  getDepartments() {
-    this._departmentsService.getDepartments().then((response: any) => {
-      this.departments = response;
+  getSeries() {
+    this.SeriesService.getSeries().then((response: any) => {
+      this.series = response;
     });
   }
 
   ngOnInit(): void {
-    this.getDepartments();
+    this.getSeries();
   }
 }

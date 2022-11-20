@@ -1,0 +1,25 @@
+<div *ngIf="!token">
+  <h3>You need to login first</h3>
+</div>
+<div *ngIf="token">
+  <h3>Employers</h3>
+  <a class="btn btn-secondary mx-2 mt-2" routerLink="/">Home</a>
+  <div class="text mt-4 mb-4">Welcome: {{user}}</div>
+  <table class="table table-bordered table-primary table-hover w-75">
+    <thead>
+      <tr>
+        <th scope="col">Surname</th>
+        <th scope="col">Office</th>
+        <th scope="col">Salary</th>
+        <th scope="col">Director</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let employer of employers">
+        <td>{{ employer.apellido }}</td>
+        <td>{{ employer.oficio }}</td>
+        <td>{{ employer.salario }}</td>
+        <td>{{ employer.director }}</td>
+      </tr>
+  </table>
+</div>

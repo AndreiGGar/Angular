@@ -1,0 +1,33 @@
+<div>
+  <form #characterNew="ngForm" class="form w-50 m-auto mt-4">
+    <label>Name: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="charName"
+      #charName
+      required
+    />
+    <label>Image: </label>
+    <input
+      class="form-control"
+      type="text"
+      name="charImage"
+      #charImage
+      required
+    />
+    <label>Serie: </label>
+    <select class="form-select" name="charSerie" #charSerie>
+      <option
+        class="form-option"
+        *ngFor="let serie of series"
+        [value]="serie.idSerie"
+      >
+        {{ serie.nombre }}
+      </option>
+    </select>
+    <button class="btn btn-primary mt-4" type="submit" (click)="newCharacter()">
+      New Char
+    </button>
+  </form>
+</div>

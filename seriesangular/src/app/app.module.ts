@@ -7,13 +7,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { Error404Component } from './components/error404/error404.component';
-import { EmployersComponent } from './components/employers/employers.component';
-import { DepartmentsService } from './services/departments.service';
-import { EmployersService } from './services/employers.service';
-import { DepartmentsComponent } from './components/departments/departments.component';
-import { DepartmentsnewComponent } from './components/departmentsnew/departmentsnew.component';
-import { DepartmentseditComponent } from './components/departmentsedit/departmentsedit.component';
-import { DepartmentsdeleteComponent } from './components/departmentsdelete/departmentsdelete.component';
+import { SeriesComponent } from './components/series/series.component';
+import { CharactersComponent } from './components/characters/characters.component';
+import { SeriesService } from './services/series.service';
+import { CharactersService } from './services/characters.service';
+import { NewcharacterComponent } from './components/newcharacter/newcharacter.component';
+import { UpdatecharacterComponent } from './components/updatecharacter/updatecharacter.component';
 
 @NgModule({
   declarations: [
@@ -21,11 +20,10 @@ import { DepartmentsdeleteComponent } from './components/departmentsdelete/depar
     HomeComponent,
     MenuComponent,
     Error404Component,
-    EmployersComponent,
-    DepartmentsComponent,
-    DepartmentsnewComponent,
-    DepartmentseditComponent,
-    DepartmentsdeleteComponent
+    SeriesComponent,
+    CharactersComponent,
+    NewcharacterComponent,
+    UpdatecharacterComponent
   ],
   imports: [
     BrowserModule,
@@ -33,7 +31,7 @@ import { DepartmentsdeleteComponent } from './components/departmentsdelete/depar
     FormsModule,
     HttpClientModule
   ],
-  providers: [DepartmentsService, EmployersService],
+  providers: [SeriesService, CharactersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

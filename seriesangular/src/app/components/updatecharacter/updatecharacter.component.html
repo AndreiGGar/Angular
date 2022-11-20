@@ -1,0 +1,49 @@
+<div>
+  <form #characterUpdate="ngForm" class="form w-50 m-auto mt-4">
+    <label>Character: </label>
+    <select
+      class="form-select"
+      name="boxChar"
+      #boxChar
+      (change)="getImgChars()"
+    >
+      <option
+        class="form-option"
+        *ngFor="let character of characters"
+        [value]="character.idPersonaje"
+      >
+        {{ character.nombre }}
+      </option>
+    </select>
+    <label>Serie: </label>
+    <select
+      class="form-select"
+      name="boxSerie"
+      #boxSerie
+      (change)="getImgSeries()"
+    >
+      <option
+        class="form-option"
+        *ngFor="let serie of series"
+        [value]="serie.idSerie"
+      >
+        {{ serie.nombre }}
+      </option>
+    </select>
+    <button
+      class="btn btn-primary mt-4"
+      type="submit"
+      (click)="updateCharacter()"
+    >
+      Add Dept
+    </button>
+  </form>
+  <br />
+  <div class="row d-flex justify-content-center mx-auto w-50" *ngIf="imgSerie">
+    <img class="w-100" src="{{imgSerie}}" />
+  </div>
+  <br /><br />
+  <div class="row d-flex justify-content-center mx-auto w-50" *ngIf="imgChar">
+    <img class="w-100" src="{{imgChar}}" />
+  </div>
+</div>

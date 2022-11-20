@@ -1,0 +1,59 @@
+<div>
+  <h3>Characters</h3>
+  <a class="btn btn-secondary mx-2" routerLink="/">Home</a>
+  <a class="btn btn-primary" routerLink="/series/{{ id }}">Go Back</a>
+  <hr />
+  <table
+    class="table table-bordered table-warning table-hover w-50 text-center m-auto"
+    *ngIf="characters?.length; else tableEmpty"
+  >
+    <thead>
+      <tr>
+        <th scope="col">Character</th>
+        <th scope="col">Image</th>
+        <th scope="col">Update</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let character of characters">
+        <td>{{ character.nombre }}</td>
+        <td>
+          <img
+            src="{{ character.imagen }}"
+            alt="{{ character.nombre }}"
+            class="w-100"
+          />
+        </td>
+        <td>
+          <a
+            class="btn btn-primary"
+            routerLink="/characters/update"
+            >Update</a
+          >
+        </td>
+        <td>
+          <button class="btn btn-danger" (click)="deleteCharacter(character.idPersonaje)">
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <ng-template #tableEmpty>
+    <table class="table table-bordered table-warning table-hover">
+      <thead>
+        <tr>
+          <th scope="col">Character</th>
+          <th scope="col">Image</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td colspan="5" class="text-center">There are no characters.</td>
+        </tr>
+      </tbody>
+    </table>
+  </ng-template>
+</div>

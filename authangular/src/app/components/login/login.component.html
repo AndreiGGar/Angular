@@ -1,0 +1,29 @@
+<div class="container-fluid">
+  <div class="row">
+    <h2 class="text-center mt-4">Use your credentials to login</h2>
+    <form #authForm="ngForm" class="form w-50 m-auto mt-4">
+      <div class="mb-3">
+        <label for="usernameBox" class="form-label">Username</label>
+        <input
+          type="text"
+          class="form-control"
+          #usernameBox
+          name="usernameBox"
+          required
+        />
+      </div>
+      <div class="mb-3">
+        <label for="passwordBox" class="form-label">Password</label>
+        <input
+          type="password"
+          class="form-control"
+          #passwordBox
+          name="passwordBox"
+          required
+        />
+      </div>
+      <button class="btn btn-primary" (click)="login()">Login</button>
+    </form>
+    <h2 *ngIf="message" class="text-danger text-center mt-3">{{ message }}</h2>
+  </div>
+</div>
